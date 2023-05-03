@@ -21,15 +21,16 @@ header .logo img{
   margin-left: 65px;
 }
 
-.usuario {
+#usuario {
   margin-right: 65px;
   border-radius: 10px;
   border: 0;
   padding: 10px;
   background-color: rgb(226, 242, 255);
+  cursor: pointer;
 }
 
-::placeholder {
+.btnUsuario ::placeholder{
   color: rgb(5, 5, 233);
 }
 
@@ -56,6 +57,10 @@ header .logo img{
   margin-left: 30px;
 }
 
+.lawn{
+  color: grey;
+}
+
 .nombre{
   font-size: 40px;
   margin-top: 10px;
@@ -66,15 +71,16 @@ header .logo img{
   margin-top: 0;
 }
 
-.seguir- {
+#btnSeguir {
   width: 90px;
-  height: 40px;
+  height: 48px;
   margin-left: 600px;
   margin-top: 200px;
   border-radius: 10px;
-  padding: 8px;
+  padding: 10px;
   border: 0;
   background-color: rgb(16, 137, 235);
+  cursor: pointer;
 }
 
 button {
@@ -82,8 +88,10 @@ button {
   font-size: 15px;
 }
 
-h1 {
-  font-size: 30px;
+.titulo-sobre-mi {
+  margin-top: 10px;
+  font-size: 28px;
+  color: rgb(108, 106, 106);
 }
 
 #sobre-mi {
@@ -110,6 +118,10 @@ h1 {
 
 }
 
+.semana{
+  color: rgb(108, 106, 106);
+}
+
 .publi-contenedor{
   margin: 10px;
 }
@@ -120,3 +132,66 @@ h1 {
   margin: 0;
 }
 
+.btnMegusta {
+  display: flex;
+}
+
+#megusta {
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  height: 40px;
+  padding: 13px;
+  border: 0;
+  font-size: bold;
+  color: rgb(16, 137, 235);
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#likes{
+  margin-left: 600px;
+}
+strong {
+  font-size: bold black;
+}
+.pLike {
+  margin-top: 30px;
+}
+
+#lista-comen{
+  font-size: 14px;
+  margin-left: 0;
+}
+
+#comentario {
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  height: 20px;
+  width: 600px;
+  padding: 13px;
+  border: 0;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.comentar ::placeholder {
+  font-size: 15px;
+  color: black;
+}
+
+
+#btnComentar {
+  width: 120px;
+  height: 43px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 13px;
+  border: 0;
+  background-color: rgb(16, 137, 235);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#mostrarError {
+  color: red;
+}
