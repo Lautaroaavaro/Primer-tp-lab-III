@@ -5,82 +5,86 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilo.css">
-  <script src="main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3.3.2/dist/vue.global.js"></script>
   <title>Globo</title>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="globo.png">
-    </div>
-    <div class="btnUsuario">
-        <input id="usuario" type="text" placeholder="Ingresa tu usuario...">
-    </div>
-  </header>
-
-  <section id="info">
-    <div class="info-contenedor">
-      <div class="jane-doe">
-        <img src="jane doe.jpg">
+  <div id="app">
+    <header>
+      <div class="logo">
+        <img src="globo.png">
       </div>
-      <div>
-        <div class="info-jane">
-          <p class="nombre"><strong>Jane Doe</strong></p>
-          <p><strong>Email</strong>: jane_doe@email.com</p>
-          <p><strong>Fecha de nacimiento</strong>: 01/05/1996</p>
-          <p><strong>Teléfono</strong>: 918-936-9585</p>
-          <p><strong>Ciudad</strong>: Tokyo, Japón</p>
-          <p>Trabajando en <strong class="lawn">Lawn N</strong></p>
+      <div class="btnUsuario">
+          <input id="usuario" type="text" placeholder="Ingresa tu usuario...">
+      </div>
+    </header>
+  
+    <section id="info">
+      <div class="info-contenedor">
+        <div class="jane-doe">
+          <img src="jane doe.jpg">
+        </div>
+        <div>
+          <div class="info-jane">
+            <p class="nombre"><strong>Jane Doe</strong></p>
+            <p><strong>Email</strong>: jane_doe@email.com</p>
+            <p><strong>Fecha de nacimiento</strong>: 01/05/1996</p>
+            <p><strong>Teléfono</strong>: 918-936-9585</p>
+            <p><strong>Ciudad</strong>: Tokyo, Japón</p>
+            <p>Trabajando en <strong class="lawn">Lawn N</strong></p>
+          </div>
+        </div>
+        <div>
+            <button id="btnSeguir">Seguir</button>
         </div>
       </div>
+    </section>
+  
+    <section id="sobre-mi">
       <div>
-          <button id="btnSeguir" onclick="cambiarSeguir()">Seguir</button>
+        <p class="titulo-sobre-mi">Sobre mí</p>
+        <p class="texto">¡Hola a todos! Soy Jane, y actualmente vivo en la vibrante y emocionante
+          ciudad de Tokio, Japón. Me encanta capturar la esencia de la vida urbana a través
+          de mi lente, explorando el contraste entre la arquitectura moderna y las 
+          tradiciones centenarias que conviven en esta metrópolis única. Desde rascacielos
+          deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos,
+          encuentro inspiración en cada rincón de esta increíble ciudad.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <section id="sobre-mi">
-    <div>
-      <p class="titulo-sobre-mi">Sobre mí</p>
-      <p class="texto">¡Hola a todos! Soy Jane, y actualmente vivo en la vibrante y emocionante
-        ciudad de Tokio, Japón. Me encanta capturar la esencia de la vida urbana a través
-        de mi lente, explorando el contraste entre la arquitectura moderna y las 
-        tradiciones centenarias que conviven en esta metrópolis única. Desde rascacielos
-        deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos,
-        encuentro inspiración en cada rincón de esta increíble ciudad.
-      </p>
-    </div>
-  </section>
-
-  <section id="publicacion">
-    <div class="publi-contenedor">
-      <p class="semana">Publicado hace 1 semana</p>
-      <div>
-        <img src="publicacion.jpg">
-      </div>
-      <div class="btnMegusta">
-        <button id="megusta" onclick="sumarLike()">Me gusta</button>
-        <p class="pLike"><span id="likes"><strong>200</strong></span> Likes</p>
-      </div>
-      <div class="comentarios">
-        <p>Comentarios</p>
-        <div id="lista-comen">
-          <p><strong>Juan Perez</strong>  ¡Wow, esa foto de Tokio es impresionante!</p>
-          <p><strong>Kathleen J Rennie</strong>  ¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</p>
-          <div class="contenedor-comentario"></div>
+    </section>
+  
+    <section id="publicacion">
+      <div class="publi-contenedor">
+        <p class="semana">Publicado hace 1 semana</p>
+        <div>
+          <img src="publicacion.jpg">
         </div>
-        <div class="comentar">
-          <input id="comentario" type="text" placeholder="Deja tu comentario...">
-          <button id="btnComentar" onclick="comentar()">Comentar</button>
+        <div class="btnMegusta">
+          <button id="megusta" @click="sumarLike" :disabled="like" >{{ botonMegusta }}</button>
+          <p class="pLike"><span id="likes"><strong>{{ cantLikes }}</strong></span> Likes</p>
         </div>
-        <p id="mostrarError"></p>
+        <div class="comentarios">
+          <p>Comentarios</p>
+          <div id="lista-comen">
+            <p><strong>Juan Perez</strong>  ¡Wow, esa foto de Tokio es impresionante!</p>
+            <p><strong>Kathleen J Rennie</strong>  ¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</p>
+            <div class="contenedor-comentario"></div>
+          </div>
+          <div class="comentar">
+            <input id="comentario" type="text" placeholder="Deja tu comentario...">
+            <button id="btnComentar">Comentar</button>
+          </div>
+          <p id="mostrarError"></p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
   
 </body>
 </html>
