@@ -39,7 +39,7 @@
           </div>
         </div>
         <div>
-            <button id="btnSeguir">Seguir</button>
+            <button id="btnSeguir" @click="siguiendo">{{ botonSeguir ? 'Dejar de seguir' : 'Seguir' }}</button>
         </div>
       </div>
     </section>
@@ -64,7 +64,7 @@
           <img src="publicacion.jpg">
         </div>
         <div class="btnMegusta">
-          <button id="megusta" @click="sumarLike" :disabled="like" >{{ botonMegusta }}</button>
+          <button id="megusta" @click="sumarLike" :disabled="like">{{ botonMegusta }}</button>
           <p class="pLike"><span id="likes"><strong>{{ cantLikes }}</strong></span> Likes</p>
         </div>
         <div class="comentarios">
