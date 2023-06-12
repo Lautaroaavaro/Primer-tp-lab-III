@@ -40,12 +40,13 @@ methods: {
       this.comentarios.push({
         ingresoUsuario: this.ingresoUsuario,
         ingresoComentario: this.ingresoComentario
-      })
+      });
+      this.ingresoComentario = '';
     }
      
   },
   borrarComentario(borrar){
-    this.comentarios.splice(borrar, 1);
+    this.comentarios.splice(borrar, 1)
   }
 
 }

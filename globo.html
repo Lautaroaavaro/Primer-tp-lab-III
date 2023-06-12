@@ -64,7 +64,7 @@
           <img src="publicacion.jpg">
         </div>
         <div class="btnMegusta">
-          <button id="megusta" @click="sumarLike" :disabled="like">{{ botonMegusta }}</button>
+          <button id="megusta" @click="sumarLike" :disabled="like" :class="{'disabled': like}">{{ botonMegusta }}</button>
           <p class="pLike"><span id="likes"><strong>{{ cantLikes }}</strong></span> Likes</p>
         </div>
         <div class="comentarios">
@@ -73,8 +73,8 @@
             <p><strong>Juan Perez</strong>  ¡Wow, esa foto de Tokio es impresionante!</p>
             <p><strong>Kathleen J Rennie</strong>  ¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</p>
             <div class="contenedor-comentario" v-for="(comentarioUsuario, borrar) in comentarios" :key="borrar">
-              <span><strong>{{ comentarioUsuario.ingresoUsuario + " " }}</strong>{{ comentarioUsuario.ingresoComentario}}</span>
-              <button @click="borrarComentario">Eliminar</button> 
+              <span><strong class="usuarioComentado">{{ comentarioUsuario.ingresoUsuario + " " }}</strong>{{ comentarioUsuario.ingresoComentario}}</span>
+              <button @click="borrarComentario(borrar)" class="btnEliminar">Eliminar</button> 
             </div>
           </div>
           <div class="comentar">

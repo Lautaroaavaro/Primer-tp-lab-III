@@ -77,7 +77,7 @@ header .logo img{
   margin-left: 600px;
   margin-top: 200px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 0;
   border: 0;
   background-color: rgb(16, 137, 235);
   cursor: pointer;
@@ -192,6 +192,26 @@ strong {
   cursor: pointer;
 }
 
+.btnEliminar{
+  background-color: #bdb9b983;
+  color: rgb(249, 11, 11);
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 #mostrarError {
   color: red;
+}
+
+#megusta.disabled{
+  background-color: rgb(86, 82, 82);
+  color: rgb(29, 124, 202);
+  cursor: not-allowed;
+}
+
+.usuarioComentado{
+  color: rgb(16, 137, 235);
 }
